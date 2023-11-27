@@ -39,9 +39,9 @@ const RegisterModal= () => {
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     setIsLoading(true);
-
     axios.post('/api/register', data)
     .then(() => {
+      toast.success("Аккаунт успешно создан")
       registerModal.onClose();
     })
     .catch((error) => {
@@ -60,7 +60,7 @@ const RegisterModal= () => {
       />
       <Input
         id="email"
-        label="Email"
+        label="Е-маил"
         disabled={isLoading}
         register={register}
         errors={errors}
@@ -68,7 +68,7 @@ const RegisterModal= () => {
       />
       <Input
         id="name"
-        label="Name"
+        label="Имя"
         disabled={isLoading}
         register={register}
         errors={errors}
@@ -76,7 +76,7 @@ const RegisterModal= () => {
       />
       <Input
         id="password"
-        label="Password"
+        label="Пароль"
         type="password"
         disabled={isLoading}
         register={register}
