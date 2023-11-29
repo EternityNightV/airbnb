@@ -44,7 +44,7 @@ const Modal = ({
 
         setShowModal(false)
         setTimeout(() => {
-            onClose
+            onClose();
         }, 300)
 
     }, [disabled, onClose])
